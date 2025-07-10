@@ -1,14 +1,18 @@
 export const styles = (theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    marginBottom: theme.spacing(4),
     minWidth: 120,
-    borderBottom: "2px solid #000",
+    marginBottom: "30px",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
-
+  loading: {
+    height: "600px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   container: {
     padding: "25px",
   },

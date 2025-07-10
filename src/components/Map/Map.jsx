@@ -12,7 +12,7 @@ const Map = () => {
   const classes = styles(theme);
   const cordinates = { lat: 0, lng: 0 };
   return (
-    <div className={classes.mapContainer}>
+    <div style={classes.mapContainer}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "" }}
         defaultCenter={cordinates}

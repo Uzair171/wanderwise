@@ -5,19 +5,33 @@ import {
   FormControl,
   Select,
   useTheme,
+  Grid,
+  Box,
 } from "@mui/material";
 import { styles } from "./list.styles.js";
 import { useState } from "react";
+import PlaceDetails from "../PlaceDetails/PlaceDetails.jsx";
 
 const List = () => {
   const theme = useTheme();
-  const styleObj = styles(theme); // get the style object from your file
-
+  const styleObj = styles(theme);
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
 
+  const places = [
+    { name: "CoolPlace" },
+    { name: "Best Bear" },
+    { name: "Best Veg" },
+    { name: "CoolPlace" },
+    { name: "Best Bear" },
+    { name: "Best Veg" },
+    { name: "CoolPlace" },
+    { name: "Best Bear" },
+    { name: "Best Veg" },
+  ];
+
   return (
-    <div style={styleObj.container}>
+    <Box sx={styleObj.container}>
       <Typography variant="h4" sx={{ mb: 3 }}>
         Restaurants, Hotels & Attractions around you
       </Typography>
@@ -48,7 +62,15 @@ const List = () => {
           <MenuItem value={4.5}>Above 4.5</MenuItem>
         </Select>
       </FormControl>
-    </div>
+
+      <Grid container spacing={3} sx={styleObj.list}>
+        {places?.map((place, index) => (
+          <Grid key={index} size={{ xs: 12 }}>
+            <PlaceDetails place={place} />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 
